@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import logo from "@/assets/riftnova-logo.png";
 
 export const Footer = () => {
   return (
@@ -7,9 +8,8 @@ export const Footer = () => {
       <div className="container-tight py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="flex items-center gap-2 font-display font-extrabold text-xl">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-primary text-primary-foreground font-black">R</span>
-              <span>RiftNova</span>
+            <Link to="/" className="inline-flex items-center bg-white rounded-md p-2" aria-label="RiftNova home">
+              <img src={logo} alt="RiftNova Technologies" className="h-12 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-secondary-foreground/70 leading-relaxed">
               Securing health. Empowering farmers. Built in Africa. Built for the world.
