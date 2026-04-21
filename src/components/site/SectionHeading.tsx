@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 interface Props {
   eyebrow?: string;
   title: ReactNode;
-  description?: ReactNode;
+  description?: string;
   align?: "left" | "center";
 }
 
@@ -14,15 +14,21 @@ export const SectionHeading = ({ eyebrow, title, description, align = "center" }
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}
+      transition={{ duration: 0.6 }}
+      className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}
     >
       {eyebrow && (
-        <div className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">{eyebrow}</div>
+        <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-primary mb-3">
+          {eyebrow}
+        </span>
       )}
-      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{title}</h2>
+      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary leading-tight">
+        {title}
+      </h2>
       {description && (
-        <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">{description}</p>
+        <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+          {description}
+        </p>
       )}
     </motion.div>
   );

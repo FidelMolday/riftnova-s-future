@@ -4,45 +4,49 @@
 
 @layer base {
   :root {
+    /* Moringa-inspired palette: coral primary, navy text, white bg */
     --background: 0 0% 100%;
-    --foreground: 222 47% 8%;
+    --foreground: 220 39% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 8%;
+    --card-foreground: 220 39% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 8%;
+    --popover-foreground: 220 39% 11%;
 
-    --primary: 231 84% 56%;
+    /* Coral / orange-red */
+    --primary: 14 91% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 224 100% 70%;
+    --primary-glow: 18 95% 62%;
 
-    --secondary: 222 47% 11%;
+    /* Deep navy */
+    --secondary: 220 39% 11%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 97%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 38%;
 
-    --accent: 224 100% 96%;
-    --accent-foreground: 231 84% 40%;
+    --accent: 14 100% 96%;
+    --accent-foreground: 14 91% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 14% 92%;
-    --input: 220 14% 92%;
-    --ring: 231 84% 56%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 14 91% 55%;
 
-    --radius: 0.875rem;
+    --radius: 0.5rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(231 84% 56%), hsl(258 84% 62%));
-    --gradient-soft: linear-gradient(180deg, hsl(224 100% 98%), hsl(0 0% 100%));
-    --gradient-text: linear-gradient(135deg, hsl(231 84% 50%), hsl(258 84% 58%));
+    --gradient-primary: linear-gradient(135deg, hsl(14 91% 55%), hsl(22 95% 60%));
+    --gradient-soft: linear-gradient(180deg, hsl(14 100% 98%), hsl(0 0% 100%));
+    --gradient-text: linear-gradient(135deg, hsl(14 91% 50%), hsl(22 95% 55%));
+    --gradient-navy: linear-gradient(135deg, hsl(220 39% 11%), hsl(220 39% 18%));
 
     --shadow-soft: 0 1px 3px 0 hsl(220 30% 20% / 0.04), 0 1px 2px 0 hsl(220 30% 20% / 0.03);
-    --shadow-card: 0 4px 24px -4px hsl(231 60% 30% / 0.08), 0 2px 8px -2px hsl(231 40% 30% / 0.04);
-    --shadow-elevated: 0 20px 50px -12px hsl(231 60% 30% / 0.18);
-    --shadow-glow: 0 0 60px hsl(231 84% 60% / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(220 39% 11% / 0.08), 0 2px 8px -2px hsl(220 39% 11% / 0.04);
+    --shadow-elevated: 0 20px 50px -12px hsl(220 39% 11% / 0.18);
+    --shadow-glow: 0 0 60px hsl(14 91% 55% / 0.25);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -53,7 +57,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 14 91% 55%;
   }
 }
 
@@ -72,7 +76,7 @@
   }
 
   h1, h2, h3, h4 {
-    @apply tracking-tight;
+    @apply tracking-tight font-display;
   }
 }
 
@@ -92,6 +96,10 @@
     background: var(--gradient-soft);
   }
 
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -105,7 +113,7 @@
   }
 
   .container-tight {
-    @apply mx-auto w-full max-w-6xl px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
   }
 
   .grid-pattern {
@@ -114,5 +122,13 @@
       linear-gradient(to bottom, hsl(var(--border) / 0.6) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 40%, transparent 75%);
+  }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
   }
 }
