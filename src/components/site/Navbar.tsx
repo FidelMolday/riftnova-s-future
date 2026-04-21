@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from "lucide-react";
 import { SearchDialog } from "./SearchDialog";
+import logo from "@/assets/riftnova-logo.png";
 
 const links = [
   { label: "Home", to: "/" },
@@ -46,9 +47,8 @@ export const Navbar = () => {
       }`}
     >
       <nav className="container-tight flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-display font-extrabold text-xl text-secondary">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-primary text-primary-foreground font-black">R</span>
-          <span>RiftNova</span>
+        <Link to="/" className="flex items-center" aria-label="RiftNova home">
+          <img src={logo} alt="RiftNova Technologies" className="h-10 md:h-12 w-auto" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-9">
