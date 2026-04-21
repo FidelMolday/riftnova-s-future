@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
+import { SearchDialog } from "./SearchDialog";
 
 const links = [
   { label: "Home", to: "/" },
@@ -15,7 +16,19 @@ const links = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setSearchOpen((v) => !v);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -55,19 +68,36 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="grid h-10 w-10 place-items-center rounded-full text-secondary/80 hover:text-primary hover:bg-muted transition-colors"
+            aria-label="Search"
+          >
+            <Search className="h-5 w-5" />
+          </button>
           <Button asChild>
             <Link to="/contact">Request Demo</Link>
           </Button>
         </div>
 
-        <button
-          className="lg:hidden text-secondary"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="lg:hidden flex items-center gap-1">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="grid h-10 w-10 place-items-center rounded-full text-secondary"
+            aria-label="Search"
+          >
+            <Search className="h-5 w-5" />
+          </button>
+          <button
+            className="text-secondary"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
+      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
 
       {open && (
         <div className="lg:hidden border-t border-border bg-background">
