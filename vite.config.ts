@@ -6,8 +6,9 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "*",
+    host: "::",
     port: 8080,
+    allowedHosts: ["riftnova-s-future.onrender.com"],
     hmr: {
       overlay: false,
     },
