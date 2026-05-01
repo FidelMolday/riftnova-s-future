@@ -41,6 +41,20 @@ const Contact = () => {
       return;
     }
 
+    const { name, email, phone, company, message } = result.data;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : "",
+      company ? `Company: ${company}` : "",
+      `Message: ${message}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const mailtoLink = `mailto:liliansingoei@gmail.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
@@ -116,7 +130,7 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
-                    <a href="mailto:hello@riftnova.com" className="font-semibold text-secondary hover:text-primary">hello@riftnova.com</a>
+                     <a href="mailto:liliansingoei@gmail.com" className="font-semibold text-secondary hover:text-primary">liliansingoei@gmail.com</a>
                   </div>
                 </div>
               </Card>

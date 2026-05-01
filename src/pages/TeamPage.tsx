@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { PageHero } from "@/components/site/PageHero";
 import { FinalCTA } from "@/components/site/FinalCTA";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import t1 from "@/assets/team-1.jpg";
 import t2 from "@/assets/team-2.jpg";
 import t3 from "@/assets/team-3.jpg";
@@ -10,32 +10,36 @@ import t4 from "@/assets/team-4.jpg";
 
 const team = [
   {
-    name: "Daniel Kiprono",
-    role: "CEO & Security Lead",
+    name: "DR. Lilian Sing'oei",
+    role: "CEO & Co-founder",
     image: t1,
     bio: "Cybersecurity strategist with a decade in enterprise risk, compliance, and Africa-first product strategy.",
     expertise: ["Cybersecurity", "ODPC Compliance", "Strategy"],
+    linkedin: "https://www.linkedin.com/in/lilian-sing-oei-08912654",
   },
   {
-    name: "Amina Wanjiru",
-    role: "AI & Data Lead",
+    name: "Diana Opiyo",
+    role: "Co-founder & AI & Data Lead",
     image: t2,
     bio: "ML engineer focused on health diagnostics and crop intelligence models trained on African datasets.",
     expertise: ["Machine Learning", "HealthTech AI", "Computer Vision"],
+    linkedin: "https://www.linkedin.com/in/diana-opiyo-680b98309",
   },
   {
-    name: "Brian Otieno",
+    name: "Fidel Ouma",
     role: "Head of Engineering",
     image: t3,
     bio: "Full-stack engineer building secure, scalable infrastructure for low-bandwidth and high-trust environments.",
     expertise: ["Cloud Architecture", "DevSecOps", "APIs"],
+    linkedin: "https://www.linkedin.com/in/fidel-ouma-699850291",
   },
   {
-    name: "Faith Chebet",
+    name: "David Wambua",
     role: "Head of Operations",
     image: t4,
     bio: "Operations leader scaling clinic, SACCO, and farmer onboarding across the Rift Valley corridor.",
     expertise: ["Operations", "Partnerships", "Go-to-Market"],
+    linkedin: "https://www.linkedin.com/in/david-polycarp-a76490292",
   },
 ];
 
@@ -81,10 +85,10 @@ const TeamPage = () => {
                         </span>
                       ))}
                     </div>
-                    <div className="mt-5 pt-4 border-t border-border flex gap-3 text-muted-foreground">
-                      <a href="#" aria-label="LinkedIn" className="hover:text-primary"><Linkedin className="h-4 w-4" /></a>
-                      <a href="#" aria-label="Twitter" className="hover:text-primary"><Twitter className="h-4 w-4" /></a>
-                    </div>
+                     <div className="mt-5 pt-4 border-t border-border flex gap-3 text-muted-foreground">
+                        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary"><Linkedin className="h-4 w-4" /></a>
+                        <a href="#" aria-label="GitHub" className="hover:text-primary"><Github className="h-4 w-4" /></a>
+                      </div>
                   </div>
                 </Card>
               </motion.div>
