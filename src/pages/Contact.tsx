@@ -52,7 +52,7 @@ const Contact = () => {
       .filter(Boolean)
       .join("\n");
 
-    const mailtoLink = `mailto:liliansingoei@gmail.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:riftnovatechnologies@gmail.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
 
     setSubmitting(true);
@@ -130,7 +130,7 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
-                     <a href="mailto:liliansingoei@gmail.com" className="font-semibold text-secondary hover:text-primary">liliansingoei@gmail.com</a>
+                     <a href="mailto:riftnovatechnologies@gmail.com" className="font-semibold text-secondary hover:text-primary">riftnovatechnologies@gmail.com</a>
                   </div>
                 </div>
               </Card>
@@ -166,7 +166,7 @@ const Contact = () => {
                   <Building2 className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="text-xs uppercase tracking-wider text-secondary-foreground/70">Partnerships</p>
-                    <p className="font-semibold">partnerships@riftnova.com</p>
+                    <p className="font-semibold">riftnovatechnologies@gmail.com</p>
                     <p className="mt-1 text-xs text-secondary-foreground/70">Investors, county partners, NGOs welcome.</p>
                   </div>
                 </div>

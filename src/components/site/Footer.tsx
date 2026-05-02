@@ -48,7 +48,7 @@ export const Footer = () => {
              <ul className="mt-4 space-y-3 text-sm text-secondary-foreground">
                 <li className="flex items-start gap-2">
                   <Mail className="h-4 w-4 mt-0.5 text-primary" />
-                  <a href="mailto:liliansingoei@gmail.com" className="text-secondary-foreground hover:text-primary transition-colors">liliansingoei@gmail.com</a>
+                  <a href="mailto:riftnovatechnologies@gmail.com" className="text-secondary-foreground hover:text-primary transition-colors">riftnovatechnologies@gmail.com</a>
                 </li>
                <li className="flex items-start gap-2">
                  <MapPin className="h-4 w-4 mt-0.5 text-primary" />

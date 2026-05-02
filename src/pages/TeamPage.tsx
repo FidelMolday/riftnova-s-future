@@ -10,7 +10,7 @@ import t4 from "@/assets/team-4.jpg";
 
 const team = [
   {
-    name: "DR. Lilian Sing'oei",
+    name: "Lilian Sing'oei",
     role: "CEO & Co-founder",
     image: t1,
     bio: "Cybersecurity strategist with a decade in enterprise risk, compliance, and Africa-first product strategy.",
