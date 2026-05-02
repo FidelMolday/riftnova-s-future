@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "0.0.0.0",
     port: 8080,
     strictPort: true,
-    allowedHosts: ["riftnova-s-future.onrender.com","https://riftnovatechnologies.com"],
+    allowedHosts: ["riftnova-s-future.onrender.com","riftnovatechnologies.com"],
     hmr: {
       overlay: false,
     },
