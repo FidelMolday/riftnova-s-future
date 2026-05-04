@@ -28,45 +28,40 @@ import secureImg from "@/assets/sector-secure.jpg";
 
 const problems = [
   {
-    icon: HeartPulse,
-    title: "Healthcare Crisis",
-    text: "Rural communities travel hours for care, records remain paper-based, and telemedicine adoption is low.",
+    icon: Lock,
+    title: "Cybersecurity Risk",
+    text: "Kenya's healthcare sector has little to no data security infrastructure — patient records, insurance data, and hospital systems are dangerously exposed.",
   },
   {
     icon: Wheat,
-    title: "Agriculture Gap",
-    text: "Farmers lack AI crop monitoring, market intelligence, and access to fair financing.",
+    title: "Farmer Vulnerability",
+    text: "Smallholder farmers are rapidly going digital but lack protection from mobile fraud, data theft, and platform manipulation.",
   },
   {
-    icon: Lock,
-    title: "Cybersecurity Risk",
-    text: "Clinics, SACCOs, and SMEs store sensitive data without proper protection or compliance.",
-  },
-  {
-    icon: Layers,
-    title: "No Unified Platform",
-    text: "Existing startups solve one problem at a time. RiftNova unifies all three securely.",
+    icon: HeartPulse,
+    title: "Fragmented Solutions",
+    text: "Existing cybersecurity tools are expensive, foreign-built, and not adapted to African infrastructure or languages.",
   },
 ];
 
 const solutions = [
   {
+    icon: ShieldCheck,
+    name: "RiftShield",
+    image: secureImg,
+    points: ["Cybersecurity-as-a-Service", "For SMEs, hospitals, agri-platforms", "East Africa focus", "Compliance & ODPC support"],
+  },
+  {
     icon: Stethoscope,
     name: "RiftHealth",
     image: healthImg,
-    points: ["Telemedicine consultations", "AI-powered diagnostics", "Electronic health records", "Medicine delivery"],
+    points: ["Secure electronic health records", "End-to-end encryption", "For clinics and hospitals", "Telemedicine ready"],
   },
   {
     icon: Sprout,
     name: "RiftFarm",
     image: farmImg,
-    points: ["AI crop monitoring", "Market price alerts", "Farmer credit access", "Supply chain links"],
-  },
-  {
-    icon: ShieldCheck,
-    name: "RiftSecure",
-    image: secureImg,
-    points: ["Compliance & ODPC support", "Security audits", "Penetration testing", "Encrypted records"],
+    points: ["Secure digital marketplace", "Data platform for farmers", "Market connections", "Financial resources"],
   },
 ];
 
@@ -77,6 +72,13 @@ const trusted = [
   { icon: Briefcase, label: "SMEs" },
   { icon: Users, label: "Investors" },
   { icon: Building2, label: "County Partners" },
+];
+
+const whyRiftNova = [
+  "Founded by a Kenyan woman with BSc IT (JKUAT), MSc Computer Science (China), and MSc Cybersecurity (USA)",
+  "Deep understanding of both African infrastructure realities and global security standards",
+  "Built from lived experience — not from a boardroom in Silicon Valley",
+  "Targeting a combined addressable market of $3B+ across East African health tech and agri-tech sectors",
 ];
 
 const stats = [
@@ -130,11 +132,10 @@ const Home = () => {
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight text-secondary">
                 One Platform.<br />
-                Three <span className="text-gradient">Superpowers.</span><br />
-                Infinite Impact.
+                Three <span className="text-gradient">Superpowers.</span>
               </h1>
-              <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-                RiftNova delivers AI-powered healthcare, smart agriculture systems, and enterprise cybersecurity for Africa's growing digital economy.
+              <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                RiftNova Technologies is a Kenyan-born, globally-minded technology company building a unified platform that secures healthcare data, empowers smallholder farmers, and delivers cutting-edge cybersecurity — all in one ecosystem. Africa loses billions annually to cyberattacks, health data breaches, and agricultural fraud. Yet the tools to fight back have always been fragmented, expensive, and built for Western markets. RiftNova changes that. We build for Africa, by Africans — with world-class security at the core of everything we do.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
@@ -180,9 +181,9 @@ const Home = () => {
           <SectionHeading
             eyebrow="The Challenge"
             title="Africa's biggest sectors face urgent, intersecting problems"
-            description="We unify what others fragment — healthcare, agriculture, and cybersecurity — into one secure platform."
+            description="Cybersecurity gaps, farmer vulnerabilities, and fragmented tools — we solve them all in one platform."
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 place-items-center grid-cols-1 sm:grid-cols-3 max-w-5xl mx-auto">
             {problems.map((p, i) => (
               <motion.div
                 key={p.title}
@@ -254,6 +255,31 @@ const Home = () => {
                     </div>
                   </Card>
                 </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY RIFTNOVA */}
+      <section className="py-20 lg:py-24 bg-muted/40">
+        <div className="container-tight">
+          <SectionHeading
+            eyebrow="Why RiftNova"
+            title="Built from lived experience, for global impact"
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {whyRiftNova.map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+              >
+                <Card className="p-7 h-full border-border hover:border-primary/40 hover:shadow-card transition-all">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item}</p>
+                </Card>
               </motion.div>
             ))}
           </div>

@@ -6,9 +6,11 @@ import { ArrowRight } from "lucide-react";
 export const FinalCTA = ({
   title = "Partner With The Future of African Innovation",
   description = "Whether you're an investor, partner, or client — let's build the next generation of integrated platforms together.",
+  buttonText = "Request Demo",
 }: {
   title?: string;
   description?: string;
+  buttonText?: string;
 }) => {
   return (
     <section className="py-20 lg:py-24">
@@ -29,10 +31,10 @@ export const FinalCTA = ({
             <p className="mt-4 text-primary-foreground/85 max-w-xl mx-auto">{description}</p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <Button size="lg" variant="secondary" asChild>
-                <Link to="/contact">
-                  Request Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                 <Link to="/contact">
+                   {buttonText} <ArrowRight className="ml-2 h-4 w-4" />
+                 </Link>
+               </Button>
               <Button
                 size="lg"
                 variant="outline"

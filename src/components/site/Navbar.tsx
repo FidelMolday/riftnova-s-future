@@ -11,6 +11,7 @@ const links = [
   { label: "About", to: "/about" },
   { label: "Team", to: "/team" },
   { label: "Roadmap", to: "/roadmap" },
+  { label: "Investors", to: "/investors" },
   { label: "Contact", to: "/contact" },
 ];
 

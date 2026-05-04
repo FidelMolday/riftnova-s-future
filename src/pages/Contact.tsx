@@ -99,7 +99,7 @@ const Contact = () => {
                   </div>
                   <div className="sm:col-span-1">
                     <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" name="phone" maxLength={40} className="mt-2" placeholder="+254 700 000 000" />
+                     <Input id="phone" name="phone" maxLength={40} className="mt-2" placeholder="+254114745379" />
                   </div>
                   <div className="sm:col-span-1">
                     <Label htmlFor="company">Company</Label>
@@ -139,7 +139,16 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="text-xs uppercase tracking-wider text-muted-foreground">Phone</p>
-                    <p className="font-semibold text-secondary">+254 700 000 000</p>
+                    <p className="font-semibold text-secondary">+254114745379</p>
+                   </div>
+                 </div>
+               </Card>
+               <Card className="p-6 border-border">
+                 <div className="flex items-start gap-3">
+                   <Phone className="h-5 w-5 text-primary mt-0.5" />
+                   <div>
+                     <p className="text-xs uppercase tracking-wider text-muted-foreground">Phone (US)</p>
+                     <p className="font-semibold text-secondary">+1 (616) 313-2804</p>
                   </div>
                 </div>
               </Card>

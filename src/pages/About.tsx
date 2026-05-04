@@ -3,15 +3,43 @@ import { PageHero } from "@/components/site/PageHero";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { Target, Eye, MapPin, Globe2, Sparkles, ShieldCheck } from "lucide-react";
+import { Target, Eye, MapPin, Globe2, Sparkles, ShieldCheck, DollarSign } from "lucide-react";
 
 const pillars = [
-  { icon: Target, title: "Mission", text: "Unify healthcare, agriculture, and cybersecurity into one platform that works for Africa." },
-  { icon: Eye, title: "Vision", text: "A continent where every clinic, farm, and business runs on intelligent, secure technology." },
+  { icon: Target, title: "Mission", text: "To build world-class secure digital infrastructure for Africa's most vital sectors — so that every farmer, every patient, and every business can thrive safely in the digital economy." },
+  { icon: Eye, title: "Vision", text: "A digitally secure Africa where technology is a tool of empowerment, not a source of vulnerability." },
   { icon: Sparkles, title: "Why Africa", text: "The world's youngest, fastest-growing digital economy — a market of compounding opportunity." },
   { icon: MapPin, title: "Why Eldoret", text: "A strategic agritech and healthcare hub at the heart of the Rift Valley corridor." },
   { icon: Globe2, title: "Global Scale", text: "From Eldoret to East Africa to the diaspora — building globally relevant infrastructure." },
   { icon: ShieldCheck, title: "Security First", text: "Compliance and encryption are not features — they are the foundation of everything we build." },
+];
+
+const revenueStreams = [
+  {
+    name: "SaaS Subscriptions",
+    detail: "Monthly/annual plans for RiftShield, RiftHealth, and RiftFarm. Tiered pricing: Starter (SMEs/small clinics), Growth (mid-size), Enterprise (hospitals, government).",
+    est: "Core recurring revenue",
+  },
+  {
+    name: "Security Audits & Consulting",
+    detail: "One-time and retainer-based cybersecurity assessments for hospitals, banks, NGOs, and government agencies.",
+    est: "High-margin services revenue",
+  },
+  {
+    name: "Data & Insights (AgriTech)",
+    detail: "Anonymized agricultural data sold to financial institutions, insurers, and government bodies for crop financing and policy decisions.",
+    est: "Scalable data revenue",
+  },
+  {
+    name: "Transaction Fees (RiftFarm)",
+    detail: "Small percentage fee on farmer-to-market transactions and financial service referrals processed through the platform.",
+    est: "Volume-based revenue",
+  },
+  {
+    name: "Government & NGO Contracts",
+    detail: "Bulk licensing and implementation contracts with county health departments, agricultural ministries, and development organizations.",
+    est: "Large contract revenue",
+  },
 ];
 
 const About = () => {
@@ -111,7 +139,40 @@ const About = () => {
         </div>
       </section>
 
-      <FinalCTA />
+      <section className="py-20 lg:py-24">
+        <div className="container-tight">
+          <SectionHeading
+            eyebrow="Business Model"
+            title="How we create sustainable value"
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {revenueStreams.map((s, i) => (
+              <motion.div
+                key={s.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+              >
+                <Card className="p-7 h-full border-border hover:border-primary/40 hover:shadow-card transition-all">
+                  <div className="h-11 w-11 rounded-md bg-primary/10 text-primary inline-flex items-center justify-center mb-5">
+                    <DollarSign className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-secondary">{s.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.detail}</p>
+                  <p className="mt-3 text-xs font-medium text-primary">{s.est}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FinalCTA 
+        title="Ready to Secure Your Digital Future?"
+        description="Whether you run a clinic, a farm, or a business — RiftNova has a solution built for you."
+        buttonText="Get in Touch"
+      />
     </>
   );
 };
